@@ -1,10 +1,9 @@
 "use client";
 
-import React from "react";
-import { Bookmark } from "lucide-react";
+import React, { useState } from "react";
 import Image from "next/image";
 import DetailButtonComponent from "./DetailButtonComponent";
-
+import { Bookmark } from "lucide-react";
 
 export const items = [
   {
@@ -76,7 +75,10 @@ export default function CardComponent() {
   return (
     <section className="w-full flex flex-col gap-y-3">
       {items.map((item, index) => (
-        <section key={index} className="flex justify-between items-center bg-main shadow-[0_0px_2px_0_rgba(0,0,0,0.2)] shadow-gray-300/20 rounded-xl p-2">
+        <section
+          key={index}
+          className="flex justify-between items-center bg-main shadow-[0_0px_2px_0_rgba(0,0,0,0.2)] shadow-gray-300/20 rounded-xl p-2 hover:shadow-[0_0px_4px_0_rgba(0,0,0,0.2)] hover:shadow-gray-300/40"
+        >
           <section className="flex items-center gap-x-3">
             <Image
               unoptimized
@@ -88,16 +90,22 @@ export default function CardComponent() {
             />
             <section className="flex flex-col items-start gap-y-2">
               <section className="flex items-center w-fit gap-x-3">
-                <p className="text-white font-bold text-sm">{item.item_name}Wireless Mouse</p>
-                <p className="font-light text-sm">{item.item_price} $19.9</p>
-                <p>
-                  <Bookmark />
+                <p className="text-white font-bold text-sm">
+                  {item.item_name}Wireless Mouse
                 </p>
+                <p className="font-light text-sm">{item.item_price} $19.9</p>
+                <div>
+                  {item.saved ? (
+                    <Bookmark className="fill-yellow-400 text-white" />
+                  ) : (
+                    <Bookmark className="text-white" />
+                  )}
+                </div>
               </section>
               <p className="text-sm text-gray-400">{item.item_description}</p>
             </section>
           </section>
-          <DetailButtonComponent item={item}/>
+          <DetailButtonComponent item={item} />
         </section>
       ))}
     </section>

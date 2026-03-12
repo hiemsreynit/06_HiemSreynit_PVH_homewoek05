@@ -16,7 +16,7 @@ export default function DetailButtonComponent({item}) {
             open && (
                 <dialog
                     open
-                    className="w-full h-full flex items-center justify-center gap-y-2 absolute inset-0 bg-black/50 "
+                    className="w-full h-full flex items-center justify-center gap-y-2 absolute inset-0 bg-black/60 "
                 >
                         <section className="flex flex-col gap-y-3 bg-main w-100 h-fit text-white rounded-xl shadow-[0_0px_2px_0_rgba(0,0,0,0.2)] shadow-gray-300/30 p-4">
                             <section className="flex justify-between items-center">
