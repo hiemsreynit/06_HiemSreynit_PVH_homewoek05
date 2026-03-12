@@ -1,16 +1,10 @@
-"use client";
+import { BookMarked } from "lucide-react";
 
-import { ArrowDownAZ, Bookmark } from "lucide-react";
-import { items } from "./CardComponent";
-import { useState } from "react";
-
-
-export default function BookmarkComponent() {
-
-
-    return (
-        <>
-        </>
-    );
-
+export default function BookmarkComponent({ onToggle }) {
+  return (
+    <button onClick={onToggle} className="flex items-center gap-x-2 hover:text-yellow-400">
+        <p>Your Bookmark</p>
+      <BookMarked />
+    </button>
+  );
 }
