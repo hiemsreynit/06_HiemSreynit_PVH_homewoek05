@@ -12,7 +12,7 @@ export default function MainComponent() {
   const [filterBookmark, setFilterBookmark] = useState(false);
 
   const handleSort = (sortOrder) => {
-    const result = [...items].sort((a, b) => {
+    const result = [...filteredItem].sort((a, b) => {
       return sortOrder === "asc"
         ? a.item_name.localeCompare(b.item_name)
         : b.item_name.localeCompare(a.item_name);

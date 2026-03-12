@@ -1,6 +1,6 @@
-import MainComponent from "./components/MainComponent";
-import NavbarComponent from "./components/NavbarComponent";
-import SidebarComponent from "./components/SidebarComponent";
+import MainComponent from "../components/MainComponent";
+import NavbarComponent from "../components/NavbarComponent";
+import SidebarComponent from "../components/SidebarComponent";
 
 export default function Home() {
   return (
